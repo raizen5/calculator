@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+	<title></title>
+	<script>
+	//fonction qui affiche les valeur
+	function affich(val){
+		document.getElementById("calcul").value+=val
+	}
+	//fonction egale
+	function egale(){
+		let x = document.getElementById("calcul").value;
+		let y = eval(x);
+		document.getElementById("calcul").value = y;
+	}
+	//fonction pour effacer les valeurs
+	function efface(){
+		document.getElementById("calcul").value = "";
+	}
+	</script>
+	<style>
+		*{
+			background-color: antiquewhite;
+		}
+		table{
+			transform: scale(4);
+			top: 400px;
+			left: 650px;
+			position: relative;
+		}
+		.title{
+			transform: scale(4);
+			position: relative;
+			top: 150px;
+			left: 650px;
+			border-radius: 5px;
+			margin-bottom: 10px;
+			text-align:center;
+			width: 165px;
+			color: maroon;
+			border: solid black 2px;
+			font-family: 'Caesar Dressing', cursive;
+		}
+		input[type="button"]{
+			border-radius: 5px;
+			background-color:darkslategrey;
+			color: antiquewhite;
+			border-color:darkslategray ;
+			width:100%;
+			font-family: 'Caesar Dressing', cursive;
+		}
+		input[type="text"]{
+			border-radius: 5px;
+			text-align: right;
+			background-color:white;
+			border-color: black ;
+			font-family: 'Caesar Dressing', cursive;
+			width:95%
+		}
+	</style>
+</head>
+<body>
+	<div class = title >JS CALCULATRICE</div>
+	<table border="0">
+	<tr>
+	<td><input type="button" value="c" onclick="efface()"/> </td>
+    <td colspan="3"><input type="text" id="calcul"/></td>
+ 
+    </tr>
+    <tr>
+    <!--les boutons de la calculatrice-->
+    <td><input type="button" value="+" onclick="affich('+')"/> </td>
+    <td><input type="button" value="1" onclick="affich('1')"/> </td>
+    <td><input type="button" value="2" onclick="affich('2')"/> </td>
+    <td><input type="button" value="3" onclick="affich('3')"/> </td>
+	</tr>
+	<tr>
+	<td><input type="button" value="-" onclick="affich('-')"/> </td>
+	<td><input type="button" value="4" onclick="affich('4')"/> </td>
+	<td><input type="button" value="5" onclick="affich('5')"/> </td>
+	<td><input type="button" value="6" onclick="affich('6')"/> </td>
+	</tr>
+	<tr>
+	<td><input type="button" value="*" onclick="affich('*')"/> </td>
+	<td><input type="button" value="7" onclick="affich('7')"/> </td>
+	<td><input type="button" value="8" onclick="affich('8')"/> </td>
+	<td><input type="button" value="9" onclick="affich('9')"/> </td>
+	</tr>
+	<tr>
+	<td><input type="button" value="/" onclick="affich('/')"/> </td>
+	<td><input type="button" value="." onclick="affich('.')"/> </td>
+	<td><input type="button" value="0" onclick="affich('0')"/> </td>
+
+	<td><input type="button" value="=" onclick="egale()"/> </td>
+	</tr>
+	</table>
+</body>
+</html>
